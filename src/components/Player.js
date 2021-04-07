@@ -19,6 +19,7 @@ function Player({
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
     duration: 0,
+    animationPercentage: 0,
   });
   const getTime = (time) => {
     return (
@@ -31,7 +32,6 @@ function Player({
   }, [isPlaying, currentSong, audioRef]);
 
   //Event handlers
-
   const playSongHandler = () => {
     setIsPlaying(!isPlaying);
   };
@@ -48,9 +48,10 @@ function Player({
       ...songInfo,
       currentTime: e.target.currentTime,
       duration: e.target.duration || 0,
-      animationPercentage: animationPercentage,
+      animationPercentage,
     });
   };
+
   const dragHandler = (e) => {
     audioRef.current.currentTime = e.target.value;
     setSongInfo({ ...songInfo, currentTime: e.target.value });
@@ -61,6 +62,10 @@ function Player({
     direction === "forward"
       ? setCurrentSong(songs[currentSongIndex + 1] || songs[0])
       : setCurrentSong(songs[currentSongIndex - 1] || songs[songs.length - 1]);
+  };
+
+  const songEndHandler = () => {
+    skiptrackHandler("forward");
   };
 
   //Add the styles
@@ -110,6 +115,7 @@ function Player({
         onTimeUpdate={timeUpdateHandler}
         ref={audioRef}
         src={currentSong.audio}
+        onEnded={songEndHandler}
       ></audio>
     </div>
   );
