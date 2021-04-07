@@ -5,7 +5,7 @@
   width: 20rem;
   height: 100%;
   box-shadow: 2px 2px 50px rgb(204, 204, 204);
-  background-color: white;
+  background: white;
   overflow: scroll;
   transform: translateX(-100%);
   transition: all 0.5s ease;
@@ -43,7 +43,7 @@
 
 .active-library {
   transform: translateX(0%);
-  // opacity: 1;
+  opacity: 1;
 }
 
 * {
@@ -62,4 +62,10 @@
   background-color: rgba(155, 155, 155, 0.5);
   border-radius: 20px;
   border: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  .library {
+    width: 100%;
+  }
 }
