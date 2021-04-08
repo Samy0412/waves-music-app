@@ -11,4 +11,6 @@ Music player playing songs from chillout.com.
 
 ## Final product
 
-!["main page"]()
+!["main page"](https://github.com/Samy0412/waves-music-app/blob/main/public/main.png?raw=true)
+
+!["main page with library"](https://github.com/Samy0412/waves-music-app/blob/main/public/main2.png?raw=true)
