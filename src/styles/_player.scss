@@ -24,6 +24,11 @@
     height: 16px;
     width: 16px;
   }
+  input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+  }
   p {
     padding: 1rem;
   }
