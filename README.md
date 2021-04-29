@@ -1,6 +1,7 @@
 # Waves Music App
 
 Music player playing songs from chillout.com.
+See it live directly here: waves-music-app-ten.vercel.app
 
 ## Setup
 
